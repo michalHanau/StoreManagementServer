@@ -24,6 +24,17 @@ app.use('/googleLogin', googleLoginRoute);
 
 const port = process.env.POsupplierRoutesRT || 3000;
 
+app.use(cors({
+  origin: [
+    "https://store-management-client-ashy.vercel.app",
+    "https://store-management-client-git-main-michals-projects-5638985a.vercel.app",
+    "https://store-management-client-307tgypco-michals-projects-5638985a.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+
 (async function() {
     try {
         await mongooseConnect();
